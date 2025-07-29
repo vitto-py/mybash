@@ -20,11 +20,11 @@ return {
                 end
 
                 -- LSP Basics
-                map("n", "gd", vim.lsp.buf.definition, "Go to definition")
-                map("n", "K", vim.lsp.buf.hover, "Hover documentation")
-                map("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
-                map("n", "<leader>ca", vim.lsp.buf.code_action, "Code actions")
-                map("n", "gr", vim.lsp.buf.references, "Find references")
+                -- map("n", "gd", vim.lsp.buf.definition, "Go to definition")
+                -- map("n", "K", vim.lsp.buf.hover, "Hover documentation")
+                -- map("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
+                -- map("n", "<leader>ca", vim.lsp.buf.code_action, "Code actions")
+                -- map("n", "gr", vim.lsp.buf.references, "Find references")
 
                 -- Metals-specific
                 -- map("n", "<leader>ws", metals.hover_worksheet, "Metals: Hover worksheet")
