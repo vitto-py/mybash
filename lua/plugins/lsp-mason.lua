@@ -12,10 +12,19 @@ return {
         -- also here is where keybindings go
         "neovim/nvim-lspconfig",
         config = function()
+            -- from completions -> nvim-cmd-lsp
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            -- the rest comes from nvim-lspconfig documentation
             local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({})
-            lspconfig.pyright.setup({})
-            lspconfig.jdtls.setup({})
+            lspconfig.lua_ls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.pyright.setup({
+                capabilities = capabilities
+            })
+            lspconfig.jdtls.setup({
+                capabilities = capabilities
+            })
             vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})

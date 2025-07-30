@@ -15,6 +15,8 @@ return {
         ---@type neotree.Config?
         config = function() 
             vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal left toggle<CR>', { desc = "Toggle Neo-tree" })
+            vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = "go to windows left" })
+            vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = "go to windows right" })
         end
     }
 }
