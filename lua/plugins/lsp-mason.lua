@@ -17,7 +17,8 @@ return {
             -- the rest comes from nvim-lspconfig documentation
             local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup({
-                capabilities = capabilities
+                -- capabilities = capabilities
+                cmd = { "lua-language-server" }, -- will use NixOS-provided binary
             })
             lspconfig.pyright.setup({
                 capabilities = capabilities
@@ -50,7 +51,8 @@ return {
         config = function()
             -- mason is for the LSP
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "pyright", "jdtls", "kotlin_language_server", "nil_ls"}
+                ensure_installed = {  "pyright", "jdtls", "kotlin_language_server", "nil_ls"},
+            automatic_installation = false, -- make sure mason doesn't try again
             })
         end
     }
