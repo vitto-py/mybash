@@ -19,6 +19,13 @@ return {
                 null_ls.builtins.formatting.prettier,
                 -- null_ls.builtins.diagnostics.eslint_d,
                 -- null_ls.builtins.diagnostics.spell,
+                -- Kotlin
+                null_ls.builtins.diagnostics.detekt,
+                null_ls.builtins.formatting.ktfmt,
+
+                -- Nix
+                null_ls.builtins.formatting.nixfmt,
+
                 require("none-ls.diagnostics.eslint_d"), -- requires none-ls-extras.nvim
             },
         })

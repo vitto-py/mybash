@@ -22,9 +22,19 @@ return {
             lspconfig.pyright.setup({
                 capabilities = capabilities
             })
+
             lspconfig.jdtls.setup({
                 capabilities = capabilities
             })
+
+            lspconfig.kotlin_language_server.setup({
+                capabilities = capabilities
+            })
+
+            lspconfig.nil_ls.setup({
+                capabilities = capabilities
+            })
+
         end
     },
     {
@@ -40,7 +50,7 @@ return {
         config = function()
             -- mason is for the LSP
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "pyright", "jdtls"}
+                ensure_installed = { "lua_ls", "pyright", "jdtls", "kotlin_language_server", "nil_ls"}
             })
         end
     }
