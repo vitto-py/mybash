@@ -1,38 +1,40 @@
 return {
-    {"nvimtools/none-ls.nvim",
-    dependencies = {
-        "nvimtools/none-ls-extras.nvim",
-    },
-    config = function()
-        local null_ls = require("null-ls")
-
-        null_ls.setup({
-            sources = {
-                -- Lua
-                null_ls.builtins.formatting.stylua,
-                -- require("none-ls.diagnostics.luacheck"),
-                -- python
-                null_ls.builtins.formatting.black,
-                null_ls.builtins.formatting.isort,
-                null_ls.builtins.diagnostics.pylint,
-                -- javascript
-                null_ls.builtins.formatting.prettier,
-                -- null_ls.builtins.diagnostics.eslint_d,
-                -- null_ls.builtins.diagnostics.spell,
-                -- Kotlin
-                null_ls.builtins.diagnostics.detekt,
-                null_ls.builtins.formatting.ktfmt,
-
-                -- Nix
-                null_ls.builtins.formatting.nixfmt,
-
-                require("none-ls.diagnostics.eslint_d"), -- requires none-ls-extras.nvim
-            },
-        })
-        -- n = normal mode
-    end,
-    }, 
     {
-        "nvimtools/none-ls-extras.nvim",     
+        "nvimtools/none-ls.nvim",
+        dependencies = {
+            "nvimtools/none-ls-extras.nvim",
+        },
+        config = function()
+            local null_ls = require("null-ls")
+
+            null_ls.setup({
+                sources = {
+                    -- Lua
+                    null_ls.builtins.formatting.stylua,
+                    -- require("none-ls.diagnostics.luacheck"),
+                    -- python
+                    null_ls.builtins.formatting.black,
+                    null_ls.builtins.formatting.isort,
+                    null_ls.builtins.diagnostics.pylint,
+                    -- javascript
+                    null_ls.builtins.formatting.prettier,
+                    -- null_ls.builtins.diagnostics.eslint_d,
+                    -- null_ls.builtins.diagnostics.spell,
+                    -- Kotlin
+                    -- null_ls.builtins.diagnostics.detekt,
+                    -- null_ls.builtins.formatting.ktfmt,
+                    -- require("none-ls.diagnostics.detekt"),
+
+                    -- Nix
+                    null_ls.builtins.formatting.nixfmt,
+
+                    require("none-ls.diagnostics.eslint_d"), -- requires none-ls-extras.nvim
+                },
+            })
+            -- n = normal mode
+        end,
+    },
+    {
+        "nvimtools/none-ls-extras.nvim",
     }
 }
